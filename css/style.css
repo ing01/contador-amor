@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Sentic';
+    src: url('../fonts/Sentic\ Text\ Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sentic P';
+    src: url('../fonts/Sentic\ Text\ Light.otf') format('opentype');
+}
+
+body {
+    font-family: 'Sentic', sans-serif;
+    background-color: #2f2a2a;
+    color: white;
+}
+
+/* Esconder a barra de rolagem, mas manter a rolagem */
+::-webkit-scrollbar {
+    display: none;
+}
+
+.glitter-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+.glitter span {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: glitterAnimation 1.5s linear infinite;
+    opacity: 0;
+}
+
+@keyframes glitterAnimation {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate3d(50px, 50px, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(100px, 100px, 0);
+        opacity: 0;
+    }
+}
+
+#clock {
+    font-size: 2em;
+    margin: 20px;
+    text-align: center;
+}
+
+.time-part {
+    display: inline-block; /* Mantém o comportamento de bloco em linha */
+    width: 5%; /* Faz com que cada span ocupe a largura total do seu contêiner */
+    margin: 0px; /* Adiciona um espaço entre os spans */
+}
+
+.carousel {
+    position: relative;
+    max-width: 35%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 65%;
+    height: 35%;
+    display: block;
+    margin-bottom: 10%;
+    border-radius: 5%;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.text {
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+p {
+    font-family: 'Sentic P';
+    margin: 0px;
+}
+
+
+audio {
+    width: 300px; /* Define a largura do controle de áudio */
+    margin: 20px auto; /* Centraliza o controle de áudio */
+    display: block; /* Faz com que o controle ocupe toda a largura definida */
+}
+
+hr {
+    width: 20%;
+    border: 1px solid rgb(255, 255, 255);
+    opacity: 25%;
+}
